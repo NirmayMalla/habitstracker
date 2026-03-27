@@ -10,7 +10,7 @@ function Login() {
     const [password, setPassword] = useState("");
 
     const handleSubmit = async (e) => { 
-
+		console.log(`|${username}|`);
         e.preventDefault();
 
         const response = await fetch("http://localhost:5000/login", {

@@ -15,8 +15,13 @@ app.use(express.json());
 app.post("/login", (req, res) => {
     
 	const { username, password } = req.body;
+	// console.log(username, password);
+	console.log("TYPE OF USERNAME:", typeof username);
+	console.log("VALUE WITH MARKERS:", `|${username}|`);
     const query = "SELECT * FROM users WHERE username = ?";
     db.query(query, [username], (err, results) => {
+		
+		console.log("QUERY RESULT:", results);
 
 		if (err) {
 			return res.status(500).json({ message: 'Server error' });
@@ -78,14 +83,14 @@ app.delete("/habits/:id", (req, res) => {
 app.put('/habits/:id', (req, res) => {
 
 	const habitId = req.params.id;
-	const habit  = req.body;
+	const { habitName } = req.body;
 
-	if (!habit)
+	if (!habitName)
 		return res.status(400).json({ message: "Habit must have a name" });
 	
 	const query = "UPDATE habits SET habit = ? WHERE habitid = ?";
 
-	db.query(query, [habit, habitId], (err, results) => {
+	db.query(query, [habitName, habitId], (err, results) => {
 
 		if (err) { 
 			return res.status(500).json({ message: "Database update failed" });	

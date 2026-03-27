@@ -10,41 +10,44 @@
     padding-right: 7px;
     padding-top: 5px;
     padding-bottom: 5px;
-    font-family: Consolas;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     cursor: pointer;
     border-radius: 5px;
     font-size: 0.9em;
-    color: white;
+    background-color: white;
 }
 
 .Delete-btn {
-    background-color: rgb(255, 93, 93);
+    border: 1px solid rgb(255, 93, 93);
+    color: rgb(255, 93, 93);
 }
 
 .Delete-btn:hover {
-    background-color: rgb(255, 126, 126);
+    background-color: rgb(255, 221, 221);
 }
 
 .Delete-btn:active {
-    background-color: rgb(255, 93, 93);
+    background-color: white;
 }
 
 .Edit-btn {
-    background-color: rgb(99, 195, 255);
+    border: 1px solid rgb(0, 157, 255);
+    color: rgb(0, 157, 255);
 }
 
 .Edit-btn:hover {
-    background-color: rgb(130, 207, 255);
+    background-color: rgb(192, 231, 255);
 }
 
 .Edit-btn:active {
-    background-color: rgb(99, 195, 255);
+    background-color: white;
 }
 
 .Add-btn {
     font-family: Consolas;
     background-color: rgba(111, 61, 196, 0.797);
-    border: 5px solid rgba(203, 172, 255, 0.797);
+
+    /* border: 5px solid rgba(203, 172, 255, 0.797); */
     color: white;
     width: 100%;
     padding: 10px;
@@ -91,33 +94,33 @@
     background-color: rgb(255, 199, 96);
 }
 
+.Habits-table-wrapper {
+    /* border: 3px solid rgb(189, 189, 189); */
+    padding: 20px;
+    background-color: white; /* this gives you that clean outer space */
+    display: inline-block; 
+    border-radius: 8px;
+}
 
 .Habits-table {
-    border: 2px solid black;
-    padding: 20px;
-    border-radius: 5px;
-    width: min-content
+    /* width: min-content; */
+    border-collapse: separate;
+    border-spacing: 0;
 }
 
-.Habits-table th {
-    font-family: Consolas;
-    /* border: 2px solid black; */
-}
-
-.Habit-card {
-    margin-top: 20px;
-    margin-bottom: 20px;
+.Habits-table th:first-child,
+.Habit-card td:first-child  {
+    padding-right: 15px;
 }
 
 .Habit-card  td {
     min-width: 40px;
-    text-align: center;
     /* border: 2px solid black; */
 }
 
 
 .Habit-name {
-    font-family: Consolas;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     font-size: 1em;
     align-content: center;
     padding: 10px;
@@ -135,7 +138,7 @@
 
 
 .Dash-title {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
     display: flex;
     justify-content: center;
     background-color: rgb(170, 195, 216);
@@ -143,40 +146,44 @@
 }
 
 .Month-year {
-    width: 500px;
-    font-family: Consolas;
-    text-align: center;
+    display: flex;
+    height: 70px;
+    width: 400px;
+    font-family: monospace;
+    justify-content: center;
+    align-items: center;
     font-size: 2.5em;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-right: 30px;
     padding-left: 30px;
-    color: white;
-    border-radius: 10px;
-    background-image: linear-gradient(rgba(111, 61, 196, 0.871), rgba(95, 151, 224, 0.888));
+    color: black;
+    background-color: rgb(255, 199, 96);
+    /* border-radius: 10px; */
+    /* background-image: linear-gradient(rgba(111, 61, 196, 0.871), rgba(95, 151, 224, 0.888)); */
     cursor: default 
 }
 
 .Carousel-container {
     display: flex;
     align-items: center;
-    min-width: 100%;
     justify-content: center;
-    gap: 100px;
+    gap: 20px
 }
 
 .Carousel-left-btn,
 .Carousel-right-btn {
-    background-image: linear-gradient(rgba(111, 61, 196, 0.871), rgba(95, 151, 224, 0.888));
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
+    font-size: 5em;
+    font-family: monospace;
+    vertical-align: middle;
+    height: 120px;
+    background-color: rgb(255, 233, 135);
 }
 
 .Carousel-left-btn:hover,
 .Carousel-right-btn:hover { 
     cursor: pointer;
-    background-image: linear-gradient(rgba(178, 133, 255, 0.871), rgba(162, 203, 255, 0.888));
+    background-color: rgb(255, 238, 160);
 }
 
 
@@ -186,9 +193,93 @@
     flex-direction: column;
     height: 100vh;
     padding-top: 50px;
-    gap: 150px;
+    gap: 10px;
 }
 
-input[type="checkbox"]:hover {
-    cursor: pointer
+.Edit-input {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.Dates.selected-column{
+    background-image: linear-gradient(rgba(139, 199, 255, 0), rgba(139, 199, 255, 0.493));
+    font-size: 1.15em;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+
+.Checkbox-cell.selected-cell {
+    background-color: rgba(139, 199, 255, 0.493);
+}
+
+.Dates, 
+.Checkbox-cell {
+    cursor: default;
+}
+
+.Dates {
+    font-family: Verdana, Geneva, Tahoma, sans-serif; 
+    background-color: rgb(219, 219, 219);
+    text-align: center;
+    vertical-align: middle;
+}
+
+.Dates:first-child {
+    border-radius: 50%;
+}
+
+.Chart-center-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+
+.Chart-center-text p:nth-child(1){
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1em;
+    /* font-weight: bold; */
+    color: hsl(0, 0%, 37%);
+} 
+
+.Chart-center-text :nth-child(2){
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 1.2em;
+    /* font-weight: bold; */
+    color: hsl(0, 0%, 37%);
+} 
+
+.Daily-chart-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    gap: 20px;
+}
+
+
+.Monthly-graph-wrapper {
+    /* border: 1px solid black; */
+    width: 1000px;
+    height: 220px;
+    padding: 10px;
+}
+
+.Graphs-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+
+}
+
+.Checkbox-cell {
+    text-align: center; 
+}
+
+.Cell {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
 }
